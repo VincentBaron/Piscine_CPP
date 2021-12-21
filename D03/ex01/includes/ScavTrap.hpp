@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 15:56:23 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/21 16:40:41 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/21 17:46:55 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SCAVTRAP_HPP
 #include "master.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : protected ClapTrap {
 
     public:
 

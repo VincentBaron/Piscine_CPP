@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 15:56:23 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/21 16:50:03 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/21 17:46:45 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRAGTRAP_HPP
 #include "master.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : protected ClapTrap {
 
     public:
 

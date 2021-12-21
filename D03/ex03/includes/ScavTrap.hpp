@@ -6,15 +6,18 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 15:56:23 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/21 17:46:31 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/21 18:48:44 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
-#include "master.hpp"
+# define SCAV_HIT 100
+# define SCAV_EN 50
+# define SCAV_ATTACK 20
+# include "master.hpp"
 
-class ScavTrap : protected ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 
     public:
 

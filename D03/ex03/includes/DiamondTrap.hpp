@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 15:56:23 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/21 17:46:31 by vbaron           ###   ########.fr       */
+/*   Created: 2021/12/21 17:44:31 by vbaron            #+#    #+#             */
+/*   Updated: 2021/12/21 19:16:33 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 #include "master.hpp"
 
-class ScavTrap : protected ClapTrap {
+class DiamondTrap : public FragTrap, public ScavTrap  {
 
     public:
 
         // Constructors and destructor
-        ScavTrap(void);
-        ScavTrap(const ScavTrap &srcs);
-        ScavTrap(const std::string name);
-        virtual ~ScavTrap();
+        DiamondTrap(void);
+        DiamondTrap(const DiamondTrap &srcs);
+        DiamondTrap(const std::string name);
+        virtual ~DiamondTrap();
 
 
         // Operator overloads
@@ -30,11 +30,11 @@ class ScavTrap : protected ClapTrap {
         // Getters / Setters
 
         // Member functions
-        void guardGate(void) const;
+        std::string getName(void) const;
 
     private:
 
-
+        std::string _name;
         // Internal functions
 
         // Attributes

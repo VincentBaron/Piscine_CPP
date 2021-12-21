@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 15:56:23 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/21 17:46:31 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/21 18:31:50 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+#define FRAG_HIT 100
+#define FRAG_EN 100
+#define FRAG_ATTACK 30
 #include "master.hpp"
 
-class ScavTrap : protected ClapTrap {
+class FragTrap : virtual protected ClapTrap {
 
     public:
 
         // Constructors and destructor
-        ScavTrap(void);
-        ScavTrap(const ScavTrap &srcs);
-        ScavTrap(const std::string name);
-        virtual ~ScavTrap();
+        FragTrap(void);
+        FragTrap(const FragTrap &srcs);
+        FragTrap(const std::string name);
+        virtual ~FragTrap();
 
 
         // Operator overloads
@@ -30,7 +33,7 @@ class ScavTrap : protected ClapTrap {
         // Getters / Setters
 
         // Member functions
-        void guardGate(void) const;
+        void highFiveGuys(void) const;
 
     private:
 
