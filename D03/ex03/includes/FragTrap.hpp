@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 15:56:23 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/22 16:48:48 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/22 17:22:15 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #define FRAG_ATTACK 30
 #include "master.hpp"
 
-class FragTrap : virtual protected ClapTrap {
+class FragTrap : virtual public ClapTrap {
 
     public:
 
