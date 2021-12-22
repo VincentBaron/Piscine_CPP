@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 17:44:31 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/21 19:16:33 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/22 16:50:23 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,17 @@ class DiamondTrap : public FragTrap, public ScavTrap  {
         // Constructors and destructor
         DiamondTrap(void);
         DiamondTrap(const DiamondTrap &srcs);
-        DiamondTrap(const std::string name);
+        DiamondTrap(const std::string& name);
         virtual ~DiamondTrap();
 
 
         // Operator overloads
-
+        DiamondTrap& operator=(const DiamondTrap &rhs);
         // Getters / Setters
 
         // Member functions
-        std::string getName(void) const;
+        void whoAmI(void) const;
+        virtual void attack(const std::string &target);
 
     private:
 

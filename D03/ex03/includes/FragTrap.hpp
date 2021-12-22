@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 15:56:23 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/21 18:31:50 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/22 16:48:48 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,16 @@ class FragTrap : virtual protected ClapTrap {
         // Constructors and destructor
         FragTrap(void);
         FragTrap(const FragTrap &srcs);
-        FragTrap(const std::string name);
+        FragTrap(const std::string& name);
         virtual ~FragTrap();
 
 
         // Operator overloads
-
+        FragTrap& operator=(const FragTrap &rhs);
         // Getters / Setters
 
         // Member functions
+        virtual void attack(std::string const &target);
         void highFiveGuys(void) const;
 
     private:

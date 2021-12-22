@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   master.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 19:37:35 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/22 16:58:10 by vbaron           ###   ########.fr       */
+/*   Created: 2021/12/20 15:48:37 by vbaron            #+#    #+#             */
+/*   Updated: 2021/12/21 12:08:19 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MASTER_HPP
+# define MASTER_HPP
 #include <iostream>
-#include "../includes/master.hpp"
+#include "ClapTrap.hpp"
 
-int main(void)
-{
-    DiamondTrap warrior1("David");
 
-    warrior1.attack("Bruno");
-    warrior1.takeDamage(20);
-    warrior1.beRepaired(50);
-    warrior1.whoAmI();
-
-    return 0;
-}
+#endif

@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 15:56:23 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/21 18:48:44 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/22 16:37:35 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,17 @@ class ScavTrap : virtual public ClapTrap {
         // Constructors and destructor
         ScavTrap(void);
         ScavTrap(const ScavTrap &srcs);
-        ScavTrap(const std::string name);
+        ScavTrap(const std::string& name);
         virtual ~ScavTrap();
 
 
         // Operator overloads
+        ScavTrap& operator=(const ScavTrap &rhs);
 
         // Getters / Setters
 
         // Member functions
+        void attack(std::string const &target);
         void guardGate(void) const;
 
     private:
