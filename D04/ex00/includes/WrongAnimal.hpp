@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongWrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 12:12:21 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/22 21:55:53 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/22 22:09:14 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 #include "master.hpp"
 
-class Animal {
+class WrongAnimal {
 
     public:
 
         // Constructors and destructor
-        Animal(void);
-        Animal(const Animal &src);
-        virtual ~Animal();
+        WrongAnimal(void);
+        WrongAnimal(const WrongAnimal &src);
+        virtual ~WrongAnimal();
 
         // Operator overloads
-        Animal&	operator=(const Animal &rhs);
+        WrongAnimal&	operator=(const WrongAnimal &rhs);
 
         // Getters / Setters
 
         // Member functions
-        virtual void makeSound(void) const;
+        void makeSound(void) const;
         std::string getType(void) const;
 
     protected:

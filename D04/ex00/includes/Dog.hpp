@@ -1,43 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 12:12:21 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/22 21:55:53 by vbaron           ###   ########.fr       */
+/*   Created: 2021/12/22 21:28:17 by vbaron            #+#    #+#             */
+/*   Updated: 2021/12/22 22:01:33 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 #include "master.hpp"
 
-class Animal {
+class Dog : public Animal {
 
     public:
 
         // Constructors and destructor
-        Animal(void);
-        Animal(const Animal &src);
-        virtual ~Animal();
+        Dog(void);
+        Dog(const Dog &src);
+        virtual ~Dog();
 
         // Operator overloads
-        Animal&	operator=(const Animal &rhs);
+        Dog&	operator=(const Dog &rhs);
 
         // Getters / Setters
 
         // Member functions
-        virtual void makeSound(void) const;
-        std::string getType(void) const;
+        void makeSound(void) const;
 
     protected:
-    
+
         // Internal functions
 
         // Attributes
-        std::string _type;
+
+    private:
+
+        // Internal functions
+
+        // Attributes
 
 };
 
