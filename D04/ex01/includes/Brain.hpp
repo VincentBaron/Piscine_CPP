@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 21:28:17 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 10:55:32 by vbaron           ###   ########.fr       */
+/*   Created: 2021/12/23 10:30:57 by vbaron            #+#    #+#             */
+/*   Updated: 2021/12/23 11:01:16 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 #include "master.hpp"
 
-class Dog : public Animal {
+class Brain {
 
     public:
 
         // Constructors and destructor
-        Dog(void);
-        Dog(const Dog &src);
-        virtual ~Dog();
+        Brain(void);
+        Brain(const Brain &src);
+        Brain(const std::string& idea);
+        virtual ~Brain();
 
         // Operator overloads
-        Dog&	operator=(const Dog &rhs);
+        Brain&	operator=(const Brain &rhs);
 
         // Getters / Setters
 
         // Member functions
-        void makeSound(void) const;
 
     protected:
 
         // Internal functions
 
         // Attributes
+        std::string _ideas[SIZE];
 
     private:
 

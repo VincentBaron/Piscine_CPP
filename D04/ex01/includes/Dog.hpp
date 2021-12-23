@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 21:28:17 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 10:55:32 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/23 10:34:42 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Dog : public Animal {
         // Internal functions
 
         // Attributes
+        Brain* _brain;
 
 };
 

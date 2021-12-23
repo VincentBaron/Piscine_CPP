@@ -1,49 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 21:33:52 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 10:55:10 by vbaron           ###   ########.fr       */
+/*   Created: 2021/12/22 21:13:44 by vbaron            #+#    #+#             */
+/*   Updated: 2021/12/22 22:00:07 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/master.hpp"
 
-Cat::Cat(void) : Animal()
+Animal::Animal(void) : _type("Default")
 {
-    std::cout << "Cat Default Constructor called" << std::endl;
-    this->_type = "Cat";
+    std::cout << "Animal Default Constructor called" << std::endl;
     return ;
 }
 
-Cat::Cat(const Cat &srcs)
+Animal::Animal(const Animal &srcs)
 {
-    std::cout << "Cat copy destructor called" << std::endl;
+    std::cout << "Animal copy destructor called" << std::endl;
     *this = srcs;
     return ;
 }
 
-Cat::~Cat(void) 
+Animal::~Animal(void) 
 {
-
-    std::cout << "Cat Destructor called" << std::endl;
+    std::cout << "Animal Destructor called" << std::endl;
     return ;
 }
 
-Cat	&Cat::operator=(const Cat &rhs) 
+Animal	&Animal::operator=(const Animal &rhs) 
 {
-    std::cout << "Cat assignation overload called" << std::endl;
+    std::cout << "Animal assignation overload called" << std::endl;
     if (this == &rhs)
-        return (*this);
+        return *this;
     this->_type = rhs._type;
     return (*this);
 }
 
-void Cat::makeSound(void) const
+void Animal::makeSound(void) const
 {
-    std::cout << "Meow!" << std::endl;
+    std::cout << "zabaZaba!" << std::endl;
     return ;
+}
+
+std::string Animal::getType(void) const
+{
+    return (this->_type);
 }

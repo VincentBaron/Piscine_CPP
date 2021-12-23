@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 21:28:17 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 10:55:32 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/23 10:34:38 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 #include "master.hpp"
 
-class Dog : public Animal {
+class Cat : public Animal {
 
     public:
 
         // Constructors and destructor
-        Dog(void);
-        Dog(const Dog &src);
-        virtual ~Dog();
+        Cat(void);
+        Cat(const Cat &src);
+        virtual ~Cat();
 
         // Operator overloads
-        Dog&	operator=(const Dog &rhs);
+        Cat&	operator=(const Cat &rhs);
 
         // Getters / Setters
 
@@ -42,6 +42,7 @@ class Dog : public Animal {
         // Internal functions
 
         // Attributes
+        Brain *_brain;
 
 };
 

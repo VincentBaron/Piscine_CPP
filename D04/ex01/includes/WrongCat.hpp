@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 21:28:17 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 10:55:32 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/22 22:01:35 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 #include "master.hpp"
 
-class Dog : public Animal {
+class WrongCat : public WrongAnimal {
 
     public:
 
         // Constructors and destructor
-        Dog(void);
-        Dog(const Dog &src);
-        virtual ~Dog();
+        WrongCat(void);
+        WrongCat(const WrongCat &src);
+        virtual ~WrongCat();
 
         // Operator overloads
-        Dog&	operator=(const Dog &rhs);
+        WrongCat&	operator=(const WrongCat &rhs);
 
         // Getters / Setters
 

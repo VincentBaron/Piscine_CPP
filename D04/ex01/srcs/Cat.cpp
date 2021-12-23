@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 21:33:52 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 10:55:10 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/23 10:57:18 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat(void) : Animal()
 {
     std::cout << "Cat Default Constructor called" << std::endl;
+    this->_brain = new Brain("My ideas are boring");
     this->_type = "Cat";
     return ;
 }
@@ -30,6 +31,7 @@ Cat::~Cat(void)
 {
 
     std::cout << "Cat Destructor called" << std::endl;
+    delete this->_brain;
     return ;
 }
 
@@ -39,6 +41,7 @@ Cat	&Cat::operator=(const Cat &rhs)
     if (this == &rhs)
         return (*this);
     this->_type = rhs._type;
+    this->_brain = new Brain();
     return (*this);
 }
 
