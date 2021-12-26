@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 18:11:56 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/26 18:25:45 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/26 18:41:07 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void MateriaSource::learnMateria(AMateria *mat)
 {
     if (this->_memory[MEMORY_SIZE - 1] != NULL)
     {
-        std::cout << "Inventory already full!" << std::endl;
+        std::cout << "Memory already full!" << std::endl;
         return ;
     }
     for (int i = 0; i < MEMORY_SIZE; i++)
@@ -81,5 +81,6 @@ AMateria* MateriaSource::createMateria(std::string const &type)
         if (this->_memory[i]->getType().compare(type) == 0)
             return (_memory[i]->clone());
     }
+    std::cout << type << " is not part of source Materias!" << std::endl;
     return (0);
 }

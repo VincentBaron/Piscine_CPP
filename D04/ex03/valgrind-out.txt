@@ -1,0 +1,86 @@
+==1370786== Memcheck, a memory error detector
+==1370786== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1370786== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==1370786== Command: ./animals
+==1370786== Parent PID: 1366135
+==1370786== 
+==1370786== Invalid read of size 8
+==1370786==    at 0x4020D9: Character::~Character() (Character.cpp:44)
+==1370786==    by 0x402138: Character::~Character() (Character.cpp:40)
+==1370786==    by 0x40194E: main (main.cpp:49)
+==1370786==  Address 0x4db7460 is 0 bytes inside a block of size 40 free'd
+==1370786==    at 0x483CFBF: operator delete(void*) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1370786==    by 0x4027C1: Cure::~Cure() (Cure.cpp:28)
+==1370786==    by 0x4020DE: Character::~Character() (Character.cpp:44)
+==1370786==    by 0x402138: Character::~Character() (Character.cpp:40)
+==1370786==    by 0x40194E: main (main.cpp:49)
+==1370786==  Block was alloc'd at
+==1370786==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1370786==    by 0x402845: Cure::clone() const (Cure.cpp:43)
+==1370786==    by 0x402CD2: MateriaSource::createMateria(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (MateriaSource.cpp:82)
+==1370786==    by 0x4017C0: main (main.cpp:37)
+==1370786== 
+==1370786== valgrind: Unrecognised instruction at address 0x401c38.
+==1370786==    at 0x401C38: AMateria::~AMateria() (AMateria.cpp:28)
+==1370786==    by 0x4020DE: Character::~Character() (Character.cpp:44)
+==1370786==    by 0x402138: Character::~Character() (Character.cpp:40)
+==1370786==    by 0x40194E: main (main.cpp:49)
+==1370786== Your program just tried to execute an instruction that Valgrind
+==1370786== did not recognise.  There are two possible reasons for this.
+==1370786== 1. Your program has a bug and erroneously jumped to a non-code
+==1370786==    location.  If you are running Memcheck and you just saw a
+==1370786==    warning about a bad jump, it's probably your program's fault.
+==1370786== 2. The instruction is legitimate but Valgrind doesn't handle it,
+==1370786==    i.e. it's Valgrind's fault.  If you think this is the case or
+==1370786==    you are not sure, please let us know and we'll try to fix it.
+==1370786== Either way, Valgrind will now raise a SIGILL signal which will
+==1370786== probably kill your program.
+==1370786== 
+==1370786== Process terminating with default action of signal 4 (SIGILL)
+==1370786==  Illegal opcode at address 0x401C38
+==1370786==    at 0x401C38: AMateria::~AMateria() (AMateria.cpp:28)
+==1370786==    by 0x4020DE: Character::~Character() (Character.cpp:44)
+==1370786==    by 0x402138: Character::~Character() (Character.cpp:40)
+==1370786==    by 0x40194E: main (main.cpp:49)
+==1370786== 
+==1370786== HEAP SUMMARY:
+==1370786==     in use at exit: 312 bytes in 7 blocks
+==1370786==   total heap usage: 12 allocs, 5 frees, 74,192 bytes allocated
+==1370786== 
+==1370786== 40 bytes in 1 blocks are still reachable in loss record 1 of 7
+==1370786==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1370786==    by 0x401497: main (main.cpp:25)
+==1370786== 
+==1370786== 40 bytes in 1 blocks are still reachable in loss record 2 of 7
+==1370786==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1370786==    by 0x4014D8: main (main.cpp:26)
+==1370786== 
+==1370786== 40 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1370786==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1370786==    by 0x401525: main (main.cpp:27)
+==1370786== 
+==1370786== 40 bytes in 1 blocks are still reachable in loss record 4 of 7
+==1370786==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1370786==    by 0x401572: main (main.cpp:28)
+==1370786== 
+==1370786== 40 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1370786==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1370786==    by 0x4015BF: main (main.cpp:29)
+==1370786== 
+==1370786== 40 bytes in 1 blocks are still reachable in loss record 6 of 7
+==1370786==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1370786==    by 0x40160C: main (main.cpp:30)
+==1370786== 
+==1370786== 72 bytes in 1 blocks are still reachable in loss record 7 of 7
+==1370786==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1370786==    by 0x40166A: main (main.cpp:33)
+==1370786== 
+==1370786== LEAK SUMMARY:
+==1370786==    definitely lost: 0 bytes in 0 blocks
+==1370786==    indirectly lost: 0 bytes in 0 blocks
+==1370786==      possibly lost: 0 bytes in 0 blocks
+==1370786==    still reachable: 312 bytes in 7 blocks
+==1370786==         suppressed: 0 bytes in 0 blocks
+==1370786== 
+==1370786== For lists of detected and suppressed errors, rerun with: -s
+==1370786== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
