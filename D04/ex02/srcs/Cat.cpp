@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 21:33:52 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/26 13:20:47 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/26 15:06:52 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ Cat	&Cat::operator=(const Cat &rhs)
         return (*this);
     this->_type = rhs._type;
     this->_brain = new Brain();
+    *(this->_brain) = *(rhs._brain);
     return (*this);
 }
 
