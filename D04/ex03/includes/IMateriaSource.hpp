@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   master.hpp                                         :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 15:48:37 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/26 16:32:39 by vbaron           ###   ########.fr       */
+/*   Created: 2021/12/26 17:37:51 by vbaron            #+#    #+#             */
+/*   Updated: 2021/12/26 18:06:43 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MASTER_HPP
-# define MASTER_HPP
-# include <iostream>
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 # include "AMateria.hpp"
-# include "Ice.hpp"
-# include "Cure.hpp"
-# include "ICharacter.hpp"
-# include "Character.hpp"
 
+class IMateriaSource
+{
+
+    public:
+        virtual ~IMateriaSource() {}
+        virtual void learnMateria(AMateria *) = 0;
+        virtual AMateria *createMateria(std::string const &type) = 0;
+};
 
 #endif

@@ -1,52 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/26 16:56:50 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/26 17:27:26 by vbaron           ###   ########.fr       */
+/*   Created: 2021/12/26 18:06:54 by vbaron            #+#    #+#             */
+/*   Updated: 2021/12/26 18:18:54 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIA_HPP
-# define IMATERIA_HPP
-# include <string>
-# include "ICharacter.hpp"
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
+# define MEMORY_SIZE 4
+# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
 
-class ICharacter;
-
-class AMateria {
+class MateriaSource : public IMateriaSource {
 
     public:
 
         // Constructors and destructor
-        AMateria(void);
-        AMateria(const AMateria &src);
-        virtual ~AMateria();
+        MateriaSource(void);
+        MateriaSource(const MateriaSource &src);
+        virtual ~MateriaSource();
 
         // Operator overloads
-        AMateria&           operator=(const AMateria &rhs);
+        MateriaSource&	operator=(const MateriaSource &rhs);
 
         // Getters / Setters
-        const std::string&  getType(void) const;
 
         // Member functions
-        virtual AMateria*   clone(void) const = 0;
-        virtual void        use(ICharacter& target) const;
+        void learnMateria(AMateria *mat);        
+        AMateria *createMateria(std::string const &type);
 
     protected:
 
         // Attributes
-        std::string        _type;
 
     private:
 
+        void initMemory(void);
         // Attributes
+        AMateria* _memory[MEMORY_SIZE];
 
 };
-
 
 
 

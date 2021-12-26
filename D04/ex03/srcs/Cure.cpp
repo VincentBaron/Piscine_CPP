@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/master.hpp"
+# include "../includes/Cure.hpp"
 
 Cure::Cure(void) 
 {

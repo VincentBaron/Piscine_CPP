@@ -6,13 +6,19 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 15:30:33 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/26 16:28:40 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/26 18:30:37 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/master.hpp"
+#include "../includes/Character.hpp"
 
 Character::Character(void) : _name("Default")
+{
+    this->initInventory();
+    return;
+}
+
+Character::Character(std::string name) : _name(name)
 {
     this->initInventory();
     return;
@@ -26,18 +32,16 @@ Character::Character(const Character &srcs)
         if (this->_inventory[i])
             delete this->_inventory[i];
         this->_inventory[i] = srcs._inventory[i]->clone();
-        i++;
     }
     return;
 }
 
 Character::~Character(void)
 {
-     for (int i = 0; i < INVENTORY_SIZE; i++)
+    for (int i = 0; i < INVENTORY_SIZE; i++)
     {
         if (this->_inventory[i])
             delete this->_inventory[i];
-        i++;
     }
     return;
 }
@@ -51,7 +55,6 @@ Character &Character::operator=(const Character &rhs)
         if (this->_inventory[i])
             delete this->_inventory[i];
         this->_inventory[i] = rhs._inventory[i]->clone();
-        i++;
     }
     return (*this);
 }
@@ -77,7 +80,6 @@ void Character::equip(AMateria *m)
                 this->_inventory[i] = m;
                 return ;
         }
-        i++;
     }
 }
 
@@ -109,4 +111,9 @@ void Character::use(int idx, ICharacter &target)
         return ;
     }
     this->_inventory[idx]->use(target);
+}
+
+const std::string&    Character::getName(void) const
+{
+    return (this->_name);
 }

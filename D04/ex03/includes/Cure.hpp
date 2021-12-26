@@ -6,13 +6,13 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 13:51:52 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/26 16:40:00 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/26 17:07:55 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CURE_HPP
 # define CURE_HPP
-# include "master.hpp"
+# include "AMateria.hpp"
 
 class Cure : public AMateria {
 

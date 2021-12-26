@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 13:38:45 by vbaron            #+#    #+#              #
-#    Updated: 2021/12/26 13:22:32 by vbaron           ###   ########.fr        #
+#    Updated: 2021/12/26 18:27:17 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,11 @@ DIR_S = srcs/
 DIR_O = objs
 
 SOURCES = 	main.cpp \
-			AAnimal.cpp \
-			Dog.cpp \
-			Cat.cpp \
-			WrongAnimal.cpp \
-			WrongCat.cpp \
-			Brain.cpp \
-
+			AMateria.cpp \
+			Character.cpp \
+			Ice.cpp \
+			Cure.cpp \
+			MateriaSource.cpp \
 
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.cpp=.o))

@@ -6,11 +6,11 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 15:03:12 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/26 15:19:01 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/26 17:17:38 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/master.hpp"
+# include "../includes/Ice.hpp"
 
 Ice::Ice(void) 
 {
