@@ -6,16 +6,16 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 21:33:52 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 10:57:18 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/26 12:56:56 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/master.hpp"
 
-Cat::Cat(void) : Animal()
+Cat::Cat(void) :
+_brain(new Brain("I will exterminate humans!"))
 {
     std::cout << "Cat Default Constructor called" << std::endl;
-    this->_brain = new Brain("My ideas are boring");
     this->_type = "Cat";
     return ;
 }
@@ -23,7 +23,9 @@ Cat::Cat(void) : Animal()
 Cat::Cat(const Cat &srcs)
 {
     std::cout << "Cat copy destructor called" << std::endl;
-    *this = srcs;
+    this->_type = srcs._type;
+    this->_brain = new Brain();
+    *(this->_brain) = *(srcs._brain);
     return ;
 }
 
@@ -49,4 +51,9 @@ void Cat::makeSound(void) const
 {
     std::cout << "Meow!" << std::endl;
     return ;
+}
+
+Brain* Cat::getBrain(void) const
+{
+    return (this->_brain);
 }

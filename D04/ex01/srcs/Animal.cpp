@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 21:13:44 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 12:58:23 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/26 12:48:05 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Animal::Animal(void) : _type("Default")
 Animal::Animal(const Animal &srcs)
 {
     std::cout << "Animal copy Constructor called" << std::endl;
-    *this = srcs;
+    this->_type = srcs._type;
     return ;
 }
 

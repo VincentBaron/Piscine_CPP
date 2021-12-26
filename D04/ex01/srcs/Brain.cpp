@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 10:32:04 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 11:05:14 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/26 12:52:01 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,16 @@ Brain	&Brain::operator=(const Brain &rhs)
     for (int i = 0; i < SIZE; i++)
         this->_ideas[i] = rhs._ideas[i];
     return (*this);
+}
+
+void Brain::displayIdeas(void) const
+{
+    for (int i = 0; i < SIZE; i++)
+        std::cout << _ideas[i] << std::endl;
+}
+
+void Brain::setIdeas(std::string newIdea)
+{
+    for (int i = 0; i < SIZE; i++)
+        this->_ideas[i] = newIdea;
 }

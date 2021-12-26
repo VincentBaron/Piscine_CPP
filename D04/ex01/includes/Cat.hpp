@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 21:28:17 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 10:34:38 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/26 12:24:37 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Cat : public Animal {
 
         // Member functions
         void makeSound(void) const;
+        Brain* getBrain(void) const;
 
     protected:
 

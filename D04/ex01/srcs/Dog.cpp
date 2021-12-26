@@ -6,16 +6,16 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 21:33:52 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/23 10:35:45 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/26 12:57:33 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/master.hpp"
 
-Dog::Dog(void) : Animal()
+Dog::Dog(void) :
+_brain(new Brain("I love Humans"))
 {
     std::cout << "Dog Default Constructor called" << std::endl;
-    this->_brain = new Brain();
     this->_type = "Dog";
     return ;
 }
@@ -23,7 +23,9 @@ Dog::Dog(void) : Animal()
 Dog::Dog(const Dog &srcs)
 {
     std::cout << "Dog copy destructor called" << std::endl;
-    *this = srcs;
+    this->_type = srcs._type;
+    this->_brain = new Brain();
+    *(this->_brain) = *(srcs._brain);
     return ;
 }
 
@@ -49,4 +51,9 @@ void Dog::makeSound(void) const
 {
     std::cout << "Wouf!" << std::endl;
     return ;
+}
+
+Brain* Dog::getBrain(void) const
+{
+    return (this->_brain);
 }
