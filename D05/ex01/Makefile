@@ -6,7 +6,7 @@
 #    By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 13:38:45 by vbaron            #+#    #+#              #
-#    Updated: 2021/12/28 00:25:14 by vincentbaro      ###   ########.fr        #
+#    Updated: 2021/12/27 18:14:35 by vincentbaro      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,13 @@ DIR_O = objs
 SOURCES = 	main.cpp \
 			Bureaucrat.cpp \
 			Form.cpp \
-			ShrubberyCreationForm.cpp \
 
 
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.cpp=.o))
 HEADERS = headers
 
-NAME = crazyforms
+NAME = bureaucrat
 
 CC = clang++
 
