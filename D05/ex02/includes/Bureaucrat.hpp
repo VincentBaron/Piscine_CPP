@@ -6,13 +6,16 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:35:16 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/27 15:09:12 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/12/27 18:25:54 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 #include <string>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -30,10 +33,11 @@ class Bureaucrat
 
         // Getters / Setters
         std::string getName(void) const;
-        int getGrade(void) const;
-        int initGrade(int grade) const;
+        unsigned int getGrade(void) const;
+        unsigned int initGrade(int grade) const;
         void increment(void);
         void decrement(void);
+		void signForm(Form& form) const;
 
         // Member functions
 
@@ -58,7 +62,7 @@ class Bureaucrat
 
         // Attributes
         std::string _name;
-        int _grade;
+        unsigned int _grade;
 
 };
 

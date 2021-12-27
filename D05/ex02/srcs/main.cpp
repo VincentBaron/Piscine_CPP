@@ -6,32 +6,55 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 20:14:19 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/27 16:31:01 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/12/27 18:42:23 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
+#include "../includes/Form.hpp"
 #include <iostream>
 
 int main()
 {
-	Bureaucrat bureaucrat("Andre", 1);
-	std::cout << bureaucrat << std::endl;
+	Bureaucrat bureaucrat("Andre", 3);
+	Form basicForm("EasyForm", 5, 10);
+	std::cout << basicForm << std::endl;
 	try
 	{
-		bureaucrat.increment();
+		basicForm.beSigned(bureaucrat);
 	}
-	catch (Bureaucrat::GradeTooHighException &e)
+	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << basicForm << std::endl;
+
+	Form hardForm("HardForm", 1, 10);
+	std::cout << hardForm << std::endl;
+	try
+	{
+		hardForm.beSigned(bureaucrat);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << hardForm << std::endl;
+	try
+	{
+		bureaucrat.signForm(basicForm);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 	try
 	{
-		Bureaucrat bureaucrat2("Eric", -4);
+		bureaucrat.signForm(hardForm);
 	}
-	catch (Bureaucrat::GradeTooHighException &e)
+	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << '\n';
 	}
 	return (0);
 }
