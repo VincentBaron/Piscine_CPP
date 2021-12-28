@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:35:16 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/28 17:46:56 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/12/28 16:40:04 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Bureaucrat
         unsigned int initGrade(int grade) const;
         void increment(void);
         void decrement(void);
-		void signForm(AForm& form)m;
+		void signForm(AForm& form);
 
         // Member functions
 		void executeForm(AForm const &form) const;

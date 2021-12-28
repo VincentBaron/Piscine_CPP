@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:38:30 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/28 17:46:49 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/12/28 16:44:05 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void Bureaucrat::executeForm(AForm const &form) const
 	else
 	{
 		form.execute(*this);
-		std::cout << this->getName() << " executmas " << form.getName() << std::endl;
+		std::cout << this->getName() << " executs " << form.getName() << std::endl;
 	}
 }
 
