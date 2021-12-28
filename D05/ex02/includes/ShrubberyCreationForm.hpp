@@ -6,21 +6,22 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 23:50:30 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/12/28 00:19:46 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/12/28 16:13:23 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class ShrubberyCreationForm : public Form {
+class ShrubberyCreationForm : public AForm {
 
 	public:
 
 		// Constructors and destructor
 		ShrubberyCreationForm(void);
 		ShrubberyCreationForm(const ShrubberyCreationForm &src);
+		ShrubberyCreationForm(std::string target);
 		virtual ~ShrubberyCreationForm();
 
 		// Operator overloads
@@ -29,7 +30,7 @@ class ShrubberyCreationForm : public Form {
 		// Getters / Setters
 
 		// Member functions
-		void createTree(Bureaucrat &target) const;
+		void execute(Bureaucrat const &executor) const;
 };
 
 

@@ -6,7 +6,7 @@
 #    By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 13:38:45 by vbaron            #+#    #+#              #
-#    Updated: 2021/12/28 00:25:14 by vincentbaro      ###   ########.fr        #
+#    Updated: 2021/12/28 16:28:48 by vincentbaro      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,10 @@ DIR_O = objs
 
 SOURCES = 	main.cpp \
 			Bureaucrat.cpp \
-			Form.cpp \
+			AForm.cpp \
 			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp \
 
 
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))

@@ -6,16 +6,16 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:35:16 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/27 18:25:54 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/12/28 16:40:04 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 #include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -37,9 +37,10 @@ class Bureaucrat
         unsigned int initGrade(int grade) const;
         void increment(void);
         void decrement(void);
-		void signForm(Form& form) const;
+		void signForm(AForm& form);
 
         // Member functions
+		void executeForm(AForm const &form) const;
 
         // Exeptions
         class GradeTooHighException : public std::exception

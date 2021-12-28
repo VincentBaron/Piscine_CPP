@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:38:30 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/27 18:26:28 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/12/28 16:44:05 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,17 +91,27 @@ unsigned int Bureaucrat::getGrade(void) const
     return (this->_grade);
 }
 
-void Bureaucrat::signForm(Form& form) const
+void Bureaucrat::signForm(AForm& form)
 {
-	if (this->_grade > form.getGradeSign())
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signs " << form .getName() << std::endl;
+	}
+	catch(const Bureaucrat::GradeTooLowException& e)
 	{
 		std::cout << this->_name << " cannot sign because the grade is too low." << std::endl;
-		throw Bureaucrat::GradeTooLowException();
 	}
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{	
+	if (this->_grade > form.getGradeExec() || !form.isSigned())
+		std::cout << this->getName() << " can't execute the specified form" << std::endl;
 	else
 	{
-		std::cout << this->_name << " signs " << form .getName() << std::endl;
-		form.setSign();
+		form.execute(*this);
+		std::cout << this->getName() << " executs " << form.getName() << std::endl;
 	}
 }
 

@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:19:16 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/12/27 23:54:40 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/12/28 15:40:36 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 # include <string>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 
 	public:
 
 		// Constructors and destructor
-		Form(void);
-		Form(const Form &src);
-		Form(std::string name, unsigned int gradeSign, unsigned int gradeExec);
-		virtual ~Form();
+		AForm(void);
+		AForm(const AForm &src);
+		AForm(std::string name, std::string target, unsigned int gradeSign, unsigned int gradeExec);
+		virtual ~AForm();
 
 		// Operator overloads
-		Form&			operator=(const Form &rhs);
+		AForm&			operator=(const AForm &rhs);
 
 		// Getters / Setters
 		std::string		getName(void) const;
+		std::string		getTarget(void) const;
 		bool			isSigned(void) const;
 		unsigned int	getGradeSign(void) const;
 		unsigned int	getGradeExec(void) const;
@@ -39,17 +40,19 @@ class Form {
 
 		// Member functions
 		void beSigned(Bureaucrat& employee);
-
+		virtual void execute(Bureaucrat const &executor) const = 0;
+	
 	private:
 
-		std::string			_name;
-		bool				_signed;
+		std::string		_name;
+		std::string		_target;
+		bool			_signed;
 		unsigned int	_gradeSign;
 		unsigned int	_gradeExec;
 
 };
 
-std::ostream&	operator<<( std::ostream& os, const Form& rhs );
+std::ostream&	operator<<( std::ostream& os, const AForm& rhs );
 
 
 #endif

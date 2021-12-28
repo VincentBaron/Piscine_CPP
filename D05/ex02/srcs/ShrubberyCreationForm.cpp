@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 23:50:04 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/12/28 00:25:31 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/12/28 16:12:50 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 # include <iostream>
 # include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("Shrubbery", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("Shrubbery", "Default", 145, 137)
 {
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &srcs) : Form(srcs)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &srcs) : AForm(srcs)
+{
+	return ;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubbery", target, 72, 45)
 {
 	return ;
 }
@@ -34,18 +39,18 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
 {
 	if (this != &rhs)
-		Form::operator=(rhs);
+		AForm::operator=(rhs);
 	return (*this);
 }
 
-void ShrubberyCreationForm::createTree(Bureaucrat &target) const
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	if (target.getGrade() > this->getGradeExec())
+	if (executor.getGrade() > this->getGradeExec())
 	{
 		throw Bureaucrat::GradeTooLowException();
 		return ;
 	}
-	std::ofstream outputFile(target.getName() + "_shrubbery");
+	std::ofstream outputFile(this->getTarget() + "_shrubbery");
 	
 	outputFile << "            ,@@@@@@@,\n"
 		"    ,,,.   ,@@@@@@/@@,  .oo8888o.\n"
