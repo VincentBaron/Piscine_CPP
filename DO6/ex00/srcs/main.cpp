@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 23:32:41 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/12/30 00:03:17 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2021/12/30 14:21:30 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,43 @@
 void displayChar(double val)
 {
 	std::cout << "char: ";
-	if (val < CHAR_MIN || val > CHAR_MAX)
+	if (val < CHAR_MIN || val > CHAR_MAX || isnan(val))
 		std::cout << "impossible" << std::endl;
 	else if (std::isprint(val))
-		std::cout << static_cast<unsigned char>(val) << std::endl;
+		std::cout << "\'" << static_cast<unsigned char>(val) << "\'" << std::endl;
 	else
 		std::cout << "non displayable" << std::endl;
+}
+
+void displayInt(double val)
+{
+	std::cout << "int: ";
+	if (val >= INT_MIN && val <= INT_MAX && !isinf(val) && !isnan(val))
+		std::cout << static_cast<int>(val) << std::endl;
+	else
+		std::cout << "impossible" << std::endl;
+}
+
+void displayFloat(double val)
+{
+	std::cout << "float: ";
+	if (isinf(val))
+		std::cout << ((val < 0) ? "-" : "") << "inff" << std::endl;
+	else if (isnan(val))
+		std::cout << "nanf" << std::endl;
+	else
+		std::cout << static_cast<float>(val) << std::endl;
+}
+
+void displayDouble(double val)
+{
+	std::cout << "double: ";
+	if (isinf(val))
+		std::cout << ((val < 0) ? "-" : "") << "inf" << std::endl;
+	else if (isnan(val))
+		std::cout << "nan" << std::endl;
+	else
+		std::cout << static_cast<double>(val) << std::endl;
 }
 
 int main(int ac, char **av)
@@ -54,5 +85,8 @@ int main(int ac, char **av)
 		}		
 	}
 	displayChar(val);
+	displayInt(val);
+	displayFloat(val);
+	displayDouble(val);
 	return 0;
 }
