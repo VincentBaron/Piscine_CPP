@@ -6,58 +6,52 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 12:10:19 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/31 12:25:27 by vbaron           ###   ########.fr       */
+/*   Updated: 2021/12/31 18:46:39 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/templates.hpp"
+#include "../includes/MutantStack.hpp"
 #include <iostream>
+#include <list>
 
 int main()
 {
+    std::cout << "\n------ Mutant Stack -------" << std::endl;
+    MutantStack<int> mstack;
+    mstack.push(5);
+    mstack.push(17);
+    mstack.push(3);
+    mstack.push(5);
+    mstack.push(737);
+    //[...]
+    mstack.push(0);
+    MutantStack<int>::iterator it = mstack.begin();
+    MutantStack<int>::iterator ite = mstack.end();
+    ++it;
+    --it;
+    while (it != ite)
+    {
+        std::cout << *it << std::endl;
+        ++it;
+    }
 
-    std::cout << "--------- Int ----------" << std::endl;
-
-    int a = 3;
-    int b = 6;
-
-    std::cout << "Original a: " << a << std::endl;
-    std::cout << "Original b: " << b << std::endl;
-    swap(a, b);
-    std::cout << "New a: " << a << std::endl;
-    std::cout << "New b: " << b << std::endl;
-
-    std::cout << "Min is: " << min(a, b) << std::endl;
-    std::cout << "Max is: " << max(a, b) << std::endl;
-
-    std::cout << "--------- Char ----------" << std::endl;
-
-    char c = 'c';
-    char d = 'z';
-
-    std::cout << "Original c: " << c << std::endl;
-    std::cout << "Original d: " << d << std::endl;
-    swap(c, d);
-    std::cout << "New c: " << c << std::endl;
-    std::cout << "New d: " << d << std::endl;
-
-    std::cout << "Min is: " << min(c, d) << std::endl;
-    std::cout << "Max is: " << max(c, d) << std::endl;
-
-
-    std::cout << "--------- String ----------" << std::endl;
-
-    std::string e = "Hello";
-    std::string f = "world";
-
-    std::cout << "Original e: " << e << std::endl;
-    std::cout << "Original f: " << f << std::endl;
-    swap(e, f);
-    std::cout << "New e: " << e << std::endl;
-    std::cout << "New f: " << f << std::endl;
-
-    std::cout << "Min is: " << min(e, f) << std::endl;
-    std::cout << "Max is: " << max(e, f) << std::endl;
-
+    std::cout << "\n------ List -------" << std::endl;
+    std::list<int> lst;
+    lst.push_back(5);
+    lst.push_back(17);
+    lst.push_back(3);
+    lst.push_back(5);
+    lst.push_back(737);
+    //[...]
+    lst.push_back(0);
+    std::list<int>::iterator lt = lst.begin();
+    std::list<int>::iterator lte = lst.end();
+    ++lt;
+    --lt;
+    while (lt != lte)
+    {
+        std::cout << *lt << std::endl;
+        ++lt;
+    }
     return 0;
 }
