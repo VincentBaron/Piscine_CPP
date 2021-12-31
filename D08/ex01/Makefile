@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 13:38:45 by vbaron            #+#    #+#              #
-#    Updated: 2021/12/31 12:20:48 by vbaron           ###   ########.fr        #
+#    Updated: 2021/12/31 17:53:11 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,11 @@ SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.cpp=.o))
 HEADERS = headers
 
-NAME = templates
+NAME = span
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wno-unused
 
 all: $(NAME)
 
