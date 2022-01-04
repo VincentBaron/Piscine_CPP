@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:35:16 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/27 18:25:54 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/04 12:29:16 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Bureaucrat
         unsigned int initGrade(int grade) const;
         void increment(void);
         void decrement(void);
-		void signForm(Form& form) const;
+		void signForm(Form& form);
 
         // Member functions
 
@@ -61,7 +61,7 @@ class Bureaucrat
     private:
 
         // Attributes
-        std::string _name;
+        const std::string _name;
         unsigned int _grade;
 
 };

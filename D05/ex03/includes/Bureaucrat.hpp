@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:35:16 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/28 16:40:04 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/04 12:35:19 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ class Bureaucrat
     private:
 
         // Attributes
-        std::string _name;
+        const std::string _name;
         unsigned int _grade;
 
 };

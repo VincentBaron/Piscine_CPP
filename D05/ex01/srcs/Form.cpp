@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:27:47 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/12/27 18:25:17 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/04 12:48:04 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ _name(srcs._name), _signed(srcs._signed), _gradeSign(srcs._gradeSign), _gradeExe
 }
 
 Form::Form(std::string name, unsigned int gradeSign, unsigned int gradeExec) :
-_name(name), _signed(0), _gradeSign(gradeSign), _gradeExec(gradeExec)
+_name(name), _signed(0), _gradeSign(Form::initGrade(gradeSign)), _gradeExec(Form::initGrade(gradeExec))
 {
 	return ;
 }
@@ -59,6 +59,16 @@ void			Form::beSigned(Bureaucrat& employee)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_signed = 1;
+}
+
+unsigned int Form::initGrade(int grade) const
+{
+    if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    else if (grade > 150)
+        throw Bureaucrat::GradeTooLowException();
+	else
+    	return (grade);
 }
 
 std::ostream&	operator<<( std::ostream& os, const Form& rhs )

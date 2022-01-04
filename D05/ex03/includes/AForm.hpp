@@ -44,11 +44,11 @@ class AForm {
 	
 	private:
 
-		std::string		_name;
-		std::string		_target;
+		const std::string		_name;
+		const std::string		_target;
 		bool			_signed;
-		unsigned int	_gradeSign;
-		unsigned int	_gradeExec;
+		const unsigned int	_gradeSign;
+		const unsigned int	_gradeExec;
 
 };
 

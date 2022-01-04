@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:19:16 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/12/27 18:22:58 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/04 12:46:43 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Form {
 		unsigned int	getGradeSign(void) const;
 		unsigned int	getGradeExec(void) const;
 		void			setSign(void);
+		unsigned int				initGrade(int grade) const;
 
 		// Member functions
 		void beSigned(Bureaucrat& employee);
