@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:27:47 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/12/28 15:56:56 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/05 14:32:19 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ _name(srcs._name), _target(srcs._target), _signed(srcs._signed), _gradeSign(srcs
 }
 
 AForm::AForm(std::string name, std::string target, unsigned int gradeSign, unsigned int gradeExec) :
-_name(name), _target(target), _signed(0), _gradeSign(gradeSign), _gradeExec(gradeExec)
+_name(name), _target(target), _signed(0), _gradeSign(AForm::initGrade(gradeSign)), _gradeExec(AForm::initGrade(gradeExec))
 {
 	return ;
 }
@@ -48,12 +48,11 @@ AForm&	AForm::operator=(const AForm &rhs)
 	return (*this);
 }
 
-std::string		AForm::getName(void) const {return this->_name;}
-unsigned int	AForm::getGradeSign(void) const {return this->_gradeSign;};
-unsigned int	AForm::getGradeExec(void) const {return this->_gradeExec;};
-std::string		AForm::getTarget(void) const {return this->_target;};
+const std::string		AForm::getName(void) const {return this->_name;}
+const unsigned int	AForm::getGradeSign(void) const {return this->_gradeSign;};
+const unsigned int	AForm::getGradeExec(void) const {return this->_gradeExec;};
+const std::string		AForm::getTarget(void) const {return this->_target;};
 bool			AForm::isSigned(void) const {return this->_signed;};
-void			AForm::setSign(void) {this->_signed = 1;}
 
 void			AForm::beSigned(Bureaucrat& employee)
 {
@@ -61,6 +60,16 @@ void			AForm::beSigned(Bureaucrat& employee)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_signed = 1;
+}
+
+unsigned int Form::initGrade(int grade) const
+{
+    if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
+    else if (grade > 150)
+        throw Bureaucrat::GradeTooLowException();
+	else
+    	return (grade);
 }
 
 std::ostream&	operator<<( std::ostream& os, const AForm& rhs )

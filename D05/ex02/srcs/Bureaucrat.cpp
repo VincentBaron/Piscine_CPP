@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:38:30 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/28 17:46:49 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/05 14:18:07 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void Bureaucrat::decrement(void)
 	this->_grade++;
 }
 
-std::string Bureaucrat::getName(void) const
+const std::string Bureaucrat::getName(void) const
 {
     return (this->_name);
 }

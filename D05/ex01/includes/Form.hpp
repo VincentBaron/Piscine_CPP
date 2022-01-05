@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:19:16 by vincentbaro       #+#    #+#             */
-/*   Updated: 2022/01/04 12:46:43 by vbaron           ###   ########.fr       */
+/*   Updated: 2022/01/05 15:05:15 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,21 @@ class Form {
 		Form&			operator=(const Form &rhs);
 
 		// Getters / Setters
-		std::string		getName(void) const;
+		const std::string		getName(void) const;
 		bool			isSigned(void) const;
-		unsigned int	getGradeSign(void) const;
-		unsigned int	getGradeExec(void) const;
-		void			setSign(void);
-		unsigned int				initGrade(int grade) const;
+		const unsigned int&	getGradeSign(void) const;
+		const unsigned int&	getGradeExec(void) const;
 
 		// Member functions
 		void beSigned(Bureaucrat& employee);
+		unsigned int				initGrade(int grade) const;
 
 	private:
 
-		std::string			_name;
+		const std::string			_name;
 		bool				_signed;
-		unsigned int	_gradeSign;
-		unsigned int	_gradeExec;
+		const unsigned int	_gradeSign;
+		const unsigned int	_gradeExec;
 
 };
 

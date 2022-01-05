@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:35:16 by vbaron            #+#    #+#             */
-/*   Updated: 2022/01/04 12:29:16 by vbaron           ###   ########.fr       */
+/*   Updated: 2022/01/05 14:15:53 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Bureaucrat
         Bureaucrat&	operator=(const Bureaucrat &rhs);
 
         // Getters / Setters
-        std::string getName(void) const;
+        const std::string getName(void) const;
         unsigned int getGrade(void) const;
         unsigned int initGrade(int grade) const;
         void increment(void);

@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:38:30 by vbaron            #+#    #+#             */
-/*   Updated: 2022/01/04 12:48:14 by vbaron           ###   ########.fr       */
+/*   Updated: 2022/01/05 14:40:42 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,25 @@ Bureaucrat::Bureaucrat(void) : _name("Default"), _grade(1)
     return ;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &srcs) 
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(initGrade(grade))
 {
-    this->_name = srcs.getName();
-    this->_grade = srcs.getGrade();
-    return ;
+	return;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(initGrade(grade))
+Bureaucrat::~Bureaucrat(void)
 {
-    return ;
+
+	return;
 }
 
-Bureaucrat::~Bureaucrat(void) 
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
-
-    return ;
-}
-
-Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &rhs) 
-{
-    if (this == &rhs)
-        return (*this);
-    this->_name = rhs.getName();
-    this->_grade = rhs.getGrade();
-    return (*this);
+	std::string *tmp = (std::string *)&this->_name;
+	if (this == &rhs)
+		return (*this);
+	*tmp = rhs.getName();
+	this->_grade = rhs.getGrade();
+	return (*this);
 }
 
 unsigned int Bureaucrat::initGrade(int grade) const
@@ -81,7 +75,7 @@ void Bureaucrat::decrement(void)
 	this->_grade++;
 }
 
-std::string Bureaucrat::getName(void) const
+const std::string Bureaucrat::getName(void) const
 {
     return (this->_name);
 }
@@ -91,7 +85,7 @@ unsigned int Bureaucrat::getGrade(void) const
     return (this->_grade);
 }
 
-void Bureaucrat::signForm(AForm& form)
+void Bureaucrat::signForm(Form& form)
 {
 	try
 	{

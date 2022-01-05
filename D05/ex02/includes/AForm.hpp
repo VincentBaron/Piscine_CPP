@@ -31,16 +31,16 @@ class AForm {
 		AForm&			operator=(const AForm &rhs);
 
 		// Getters / Setters
-		std::string		getName(void) const;
-		std::string		getTarget(void) const;
+		const std::string		getName(void) const;
+		const std::string		getTarget(void) const;
 		bool			isSigned(void) const;
-		unsigned int	getGradeSign(void) const;
-		unsigned int	getGradeExec(void) const;
-		void			setSign(void);
+		const unsigned int&	getGradeSign(void) const;
+		const unsigned int&	getGradeExec(void) const;
 
 		// Member functions
 		void beSigned(Bureaucrat& employee);
 		virtual void execute(Bureaucrat const &executor) const = 0;
+		unsigned int				initGrade(int grade) const;
 	
 	private:
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 19:38:30 by vbaron            #+#    #+#             */
-/*   Updated: 2021/12/27 17:17:34 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/05 14:38:40 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ Bureaucrat::Bureaucrat(void) : _name("Default"), _grade(1)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &srcs)
 {
-	this->_name = srcs.getName();
-	this->_grade = srcs.getGrade();
+	*this = srcs;
 	return;
 }
 
@@ -38,9 +37,10 @@ Bureaucrat::~Bureaucrat(void)
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
+	std::string *tmp = (std::string *)&this->_name;
 	if (this == &rhs)
 		return (*this);
-	this->_name = rhs.getName();
+	*tmp = rhs.getName();
 	this->_grade = rhs.getGrade();
 	return (*this);
 }
@@ -82,7 +82,7 @@ void Bureaucrat::decrement(void)
 		this->_grade++;
 }
 
-std::string Bureaucrat::getName(void) const
+const std::string Bureaucrat::getName(void) const
 {
 	return (this->_name);
 }

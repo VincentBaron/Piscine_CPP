@@ -6,7 +6,7 @@
 /*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:27:47 by vincentbaro       #+#    #+#             */
-/*   Updated: 2022/01/04 12:48:04 by vbaron           ###   ########.fr       */
+/*   Updated: 2022/01/05 15:04:59 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,23 @@ Form::~Form(void)
 
 Form&	Form::operator=(const Form &rhs)
 {
+	std::string *tmp_name = (std::string *)&this->_name;
+	unsigned int *tmp_gradeSign = (unsigned int *)&this->_gradeSign;
+	unsigned int *tmp_gradeExec = (unsigned int *)&this->_gradeExec;
+	
 	if (this == &rhs)
 		return *this;
-	this->_name = rhs._name;
+	*tmp_name = rhs.getName();
 	this->_signed = rhs._signed;
-	this->_gradeSign = rhs._gradeSign;
-	this->_gradeExec = rhs._gradeExec;
+	*tmp_gradeSign = rhs.getGradeSign();
+	*tmp_gradeExec = rhs.getGradeExec();
 	return (*this);
 }
 
-std::string		Form::getName(void) const {return this->_name;}
-unsigned int	Form::getGradeSign(void) const {return this->_gradeSign;};
-unsigned int	Form::getGradeExec(void) const {return this->_gradeExec;};
+const std::string		Form::getName(void) const {return this->_name;}
+const unsigned int&	Form::getGradeSign(void) const {return this->_gradeSign;};
+const unsigned int&	Form::getGradeExec(void) const {return this->_gradeExec;};
 bool			Form::isSigned(void) const {return this->_signed;};
-void			Form::setSign(void) {this->_signed = 1;}
 
 void			Form::beSigned(Bureaucrat& employee)
 {
