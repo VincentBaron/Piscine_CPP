@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 23:32:41 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/12/30 14:21:30 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/06 20:14:55 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
 # include <string>
 # include <cctype>
+# include <limits.h>
+# include <math.h>
 
 void displayChar(double val)
 {
@@ -73,7 +75,7 @@ int main(int ac, char **av)
 	{
 		try
 		{
-			val = std::stod(str);
+			val = atof(av[1]);
 		}
 		catch(const std::exception& e)
 		{
