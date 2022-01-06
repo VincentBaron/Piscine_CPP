@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 19:19:27 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/12/30 19:47:18 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/06 20:19:43 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # include <cstdlib>
 # include <iostream>
 # include <ctime>
+# include <typeinfo>
 
 Base::~Base(void) {};
 
