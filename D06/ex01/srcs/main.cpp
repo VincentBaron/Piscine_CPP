@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
+/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 14:33:36 by vincentbaro       #+#    #+#             */
-/*   Updated: 2021/12/30 15:39:11 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/06 20:18:01 by vbaron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+# include <stdint.h>
 
 struct Data
 {
 	int val;
 };
 
-Data* deserialize(std::uintptr_t casted)
+Data* deserialize(uintptr_t casted)
 {
 	Data *tmp;
 
@@ -25,9 +26,9 @@ Data* deserialize(std::uintptr_t casted)
 	return (tmp);
 }
 
-std::uintptr_t serialize(Data *ptr)
+uintptr_t serialize(Data *ptr)
 {
-	std::uintptr_t newPtr = reinterpret_cast<std::uintptr_t>(ptr);
+	uintptr_t newPtr = reinterpret_cast<uintptr_t>(ptr);
 	return (newPtr);
 }
 
@@ -36,7 +37,7 @@ int main(void)
 	Data ptr;
 	ptr.val = 8;
 	Data *newPtr = 0;
-	std::uintptr_t casted = 0;
+	uintptr_t casted = 0;
 
 	std::cout << "Pointer on Data structure: " << &ptr << std::endl;
 	casted = serialize(&ptr);
