@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 12:10:19 by vbaron            #+#    #+#             */
-/*   Updated: 2022/01/03 12:15:02 by vbaron           ###   ########.fr       */
+/*   Updated: 2022/01/10 11:25:02 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int main()
         std::cout << *lt << std::endl;
         ++lt;
     }
+	std::stack<int> s(mstack);
     return 0;
 }
