@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 16:31:21 by vbaron            #+#    #+#             */
-/*   Updated: 2022/01/11 15:12:12 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/11 17:26:29 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Span {
         int shortestSpan(void);
         int longestSpan(void);
         void display(void);
+		void addIte(std::vector<int>::iterator start, std::vector<int>::iterator end);
 
     private:
 

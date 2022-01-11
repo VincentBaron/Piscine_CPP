@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 17:33:05 by vbaron            #+#    #+#             */
-/*   Updated: 2022/01/11 15:13:52 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/11 17:31:38 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,10 @@ int main()
     {
         std::cout << "Vector is already full!" << std::endl;
     }
+	std::cout << "\n------- Adding numbers using iterators -------" << std::endl;
+	Span spBig = Span (1000);
+	std::vector<int> v(1000, 5);
+	spBig.addIte(v.begin(), v.end());
+	spBig.display();
     return (0);
 }

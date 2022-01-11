@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 16:55:26 by vbaron            #+#    #+#             */
-/*   Updated: 2022/01/11 15:13:14 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/11 17:28:40 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,13 @@ int Span::longestSpan(void)
 void Span::display(void)
 {
 	std::for_each(this->_array.begin(), this->_array.end(), displayElem);
+}
+
+void Span::addIte(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+	while (start != end)
+	{
+		addNumber(*start);
+		start++;
+	}
 }
