@@ -81,7 +81,7 @@ int main()
 	for (std::map<int, int>::const_iterator it = map.begin();
 		 it != map.end(); ++it)
 	{
-		std::cout << it->first << " " << it->second << " " << it->second << "\n";
+		std::cout << it->first << " " << it->second << "\n";
 	}
 	std::cout << "\nFinding existing value: " << std::endl;
 	std::cout << "Index of value: " << easyfind(map, 10) << std::endl;
@@ -106,7 +106,7 @@ int main()
 	for (std::multimap<int, int>::const_iterator it = multiMap.begin();
 		 it != multiMap.end(); ++it)
 	{
-		std::cout << it->first << " " << it->second << " " << it->second << "\n";
+		std::cout << it->first << " " << it->second << "\n";
 	}
 	std::cout << "\nFinding existing value: " << std::endl;
 	std::cout << "Index of value: " << easyfind(multiMap, 10) << std::endl;

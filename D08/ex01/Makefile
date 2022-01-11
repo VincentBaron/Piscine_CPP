@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
+#    By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 13:38:45 by vbaron            #+#    #+#              #
-#    Updated: 2021/12/31 17:53:11 by vbaron           ###   ########.fr        #
+#    Updated: 2022/01/11 15:12:36 by vincentbaro      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ DIR_S = srcs/
 DIR_O = objs
 
 SOURCES = 	main.cpp \
+			Span.cpp
 
 
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
@@ -24,7 +25,7 @@ NAME = span
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wno-unused
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

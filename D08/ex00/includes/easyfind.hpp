@@ -6,7 +6,7 @@
 /*   By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 15:50:55 by vbaron            #+#    #+#             */
-/*   Updated: 2022/01/10 15:03:08 by vincentbaro      ###   ########.fr       */
+/*   Updated: 2022/01/11 15:14:16 by vincentbaro      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,5 @@ template<typename key, typename value>
         throw std::exception();
     return (iterator->second);
 }
-
-
 
 #endif
